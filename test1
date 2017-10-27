@@ -1,0 +1,20 @@
+How to increase decimal positions in order to enhance currency precision
+
+1- First Change:
+
+         _columns = {       
+
+'rate': fields.function(_get_current_rate, string='Current Rate', digits=(12,10),                    
+
+
+
+2- Second Change:
+
+
+
+class res_currency_rate(osv.osv):
+        _name = "res.currency.rate"      
+
+      _description = "Currency Rate"
+      _columns = {        'rate': fields.float('Rate', digits=(12, 10), help='The rate of the currency to the currency of rate 1'),
+
